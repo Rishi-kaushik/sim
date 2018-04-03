@@ -1,10 +1,10 @@
 from graphics import *
 import random
 
-width, height, spread = 500, 500, 2
-pop = 30
-speed = 0
-max_pop = 3000
+width, height, spread = 100, 100, 8
+pop = 2
+speed = 0.3
+max_pop = 2
 
 
 class Creature:
@@ -39,7 +39,7 @@ class Creature:
                 a.append(Creature(self.type, self.x, self.y))
                 self.alive = False
         else:  # herbivore  (eats plant) or carnivore (eats herbivore)
-            self.health -= 1
+            # self.health -= 1
             if self.health <= 0:
                 a.remove(self)
                 self.alive = False
@@ -143,7 +143,11 @@ for i in range(0, height):
     map.append(line)
 
 a = []
-for i in range(0, pop): a.append(Creature(random.randint(1, 3)))
+# for i in range(0, pop):
+#     a.append(Creature(random.randint(1, 3)))
+a.append(Creature(3))
+a.append(Creature(2))
+
 
 while len(a) > 0:
     time.sleep(speed)  # used to slow simulation
