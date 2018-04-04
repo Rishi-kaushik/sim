@@ -3,7 +3,7 @@ import random
 
 width, height, spread = 100, 100, 8
 pop = 2
-speed = 0.3
+speed = 0.1
 max_pop = 2
 
 
